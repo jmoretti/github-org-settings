@@ -1,0 +1,23 @@
+service: github-org-settings
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  environment:
+    GITHUB_WEBHOOK_SECRET: ${ssm:/github-org-settings/GITHUB_WEBHOOK_SECRET~true}
+    GITHUB_API_TOKEN: ${ssm:/github-org-settings/GITHUB_API_TOKEN~true}
+    GITHUB_ORG: ${ssm:/github-org-settings/GITHUB_ORG~true}
+    ATLASSIAN_API_USER: ${ssm:/github-org-settings/ATLASSIAN_API_USER~true}
+    ATLASSIAN_API_TOKEN: ${ssm:/github-org-settings/ATLASSIAN_API_TOKEN~true}
+    JIRA_FQDN: ${ssm:/github-org-settings/JIRA_FQDN~true}
+    JIRA_PROJECT_KEY: ${ssm:/github-org-settings/JIRA_PROJECT_KEY~true}
+    JIRA_ISSUETYPE_NAME: ${ssm:/github-org-settings/JIRA_ISSUETYPE_NAME~true}
+
+functions:
+  githubWebhookListener:
+    handler: handler.githubWebhookListener
+    events:
+      - http:
+          path: webhook
+          method: post
+          cors: true

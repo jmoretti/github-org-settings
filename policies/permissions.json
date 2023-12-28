@@ -1,0 +1,29 @@
+{
+  "default": {
+    "teams":
+    [
+      {
+        "name": "Developers",
+        "slug": "developers",
+        "permission": "push"
+      },
+      {
+        "name": "Bots",
+        "slug": "bots",
+        "permission": "admin"
+      },
+      {
+        "name": "Admins",
+        "slug": "admins",
+        "permission": "admin"
+      }
+    ]
+  },
+  "exceptions": {
+    "repositories":
+    [
+      
+    ]
+
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "github-org-settings",
+  "version": "1.0.0",
+  "description": "Ensure consistency to organizational standards with this github webhook listener",
+  "main": "handler.js",
+  "scripts": {
+    "deploy": "serverless deploy",
+    "logs": "serverless logs -f githubWebhookListener -t"
+  },
+  "author": "Joe Moretti",
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/rest": "^17.9.2",
+    "@octokit/plugin-retry": "^3.0.1",
+    "jira-client": "^6.17.0"
+  }
+}

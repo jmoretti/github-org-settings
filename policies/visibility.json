@@ -1,0 +1,9 @@
+{
+  "default": "private",
+  "exceptions": {
+    "repositories":
+    [
+      "sample-public-repo"
+    ]
+  }
+}
